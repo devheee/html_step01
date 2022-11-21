@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector02</title>
+    <style>
+        /* .class＾h2 한칸 띄워서 쓸때 아래 모든 후손선택자가 선택됨 */
+        .class2 h2 {
+            color: tomato;
+        }
+
+        /* 후손은 모든 자식을 포함하므로 특정지으려면 경로를 짜줘야됨
+        css는 1부터 시작함, nth-child 외에는 class 이름 만들어주면 됨 */
+        .class>ul>li:nth-child(1) a {
+            color: tomato;
+        }
+
+        .class2>ul>li>a+ul a {
+            color: #369;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="class">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <ul>
+            <li>
+                <a href="">menu</a>
+                <ul>
+                    <li><a href="">menu</a></li>
+                    <li><a href="">menu</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">menu</a>
+                <ul>
+                    <li><a href="">menu</a></li>
+                    <li><a href="">menu</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section class="class2">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <ul>
+            <li>
+                <a href="">menu</a>
+                <ul>
+                    <li><a href="">menu</a></li>
+                    <li><a href="">menu</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">menu</a>
+                <ul>
+                    <li><a href="">menu</a></li>
+                    <li><a href="">menu</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</body>
+
+</html>
